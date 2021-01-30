@@ -31,7 +31,9 @@
             "prefix": "core",
             "style": "kebab-case"
           }
-        ]
+        ],
+        // conflicts with Angular generate and TSLint default
+        "import/prefer-default-export": "off"
       }
     },
     {
