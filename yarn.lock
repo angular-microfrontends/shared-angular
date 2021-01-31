@@ -9531,6 +9531,13 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
+single-spa-angular@^4.9.2:
+  version "4.9.2"
+  resolved "https://registry.yarnpkg.com/single-spa-angular/-/single-spa-angular-4.9.2.tgz#4b4e2d68661a2f17ce950d94d60a49e60a4ed52c"
+  integrity sha512-Hh28H/M+kPLbMTJ1JB73G1fdRyciztM7pP1neNMei+t7XCCDtNGMwOxMATRZf3jD0YDEQY5jxfudgXu8+6qQlA==
+  dependencies:
+    tslib "^2.0.0"
+
 sisteransi@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/sisteransi/-/sisteransi-1.0.5.tgz#134d681297756437cc05ca01370d3a7a571075ed"
