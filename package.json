@@ -6,7 +6,8 @@
     "start": "http-server --cors --gzip --port 9002 dist",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {

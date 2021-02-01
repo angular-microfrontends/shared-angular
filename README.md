@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
+## Ivy shared dependency
+
+Straight to the point: **dependencies only work if you run `ngcc` on them before packing**.
+When they are used by Angular applications the builder runs that on dependencies automatically, but
+that does not happen when packing them separatedly.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

@@ -39,6 +39,303 @@
           }
         }
       }
+    },
+    "angular-animations": {
+      "projectType": "application",
+      "root": "projects/angular-animations",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-animations",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-animations/extra-webpack.config.js",
+              "libraryName": "angular-animations",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-animations-browser": {
+      "projectType": "application",
+      "root": "projects/angular-animations-browser",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-animations-browser",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-animations-browser/extra-webpack.config.js",
+              "libraryName": "angular-animations-browser",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-common": {
+      "projectType": "application",
+      "root": "projects/angular-common",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-common",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-common/extra-webpack.config.js",
+              "libraryName": "angular-common",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-core": {
+      "projectType": "application",
+      "root": "projects/angular-core",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-core",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-core/extra-webpack.config.js",
+              "libraryName": "angular-core",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-platform-browser": {
+      "projectType": "application",
+      "root": "projects/angular-platform-browser",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-platform-browser",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-platform-browser/extra-webpack.config.js",
+              "libraryName": "angular-platform-browser",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-platform-browser-animations": {
+      "projectType": "application",
+      "root": "projects/angular-platform-browser-animations",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-platform-browser-animations",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-platform-browser-animations/extra-webpack.config.js",
+              "libraryName": "angular-platform-browser-animations",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "angular-router": {
+      "projectType": "application",
+      "root": "projects/angular-router",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/angular-router",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/angular-router/extra-webpack.config.js",
+              "libraryName": "angular-router",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "single-spa-angular": {
+      "projectType": "application",
+      "root": "projects/single-spa-angular",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/single-spa-angular",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/single-spa-angular/extra-webpack.config.js",
+              "libraryName": "single-spa-angular",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
+    },
+    "tslib": {
+      "projectType": "application",
+      "root": "projects/tslib",
+      "architect": {
+        "build": {
+          "builder": "@angular-builders/custom-webpack:browser",
+          "options": {
+            "outputPath": "dist/tslib",
+            "index": "common/repack/index.html",
+            "main": "common/repack/main.ts",
+            "tsConfig": "common/repack/tsconfig.app.json",
+            "aot": true,
+            "customWebpackConfig": {
+              "path": "projects/tslib/extra-webpack.config.js",
+              "libraryName": "tslib",
+              "libraryTarget": "umd"
+            }
+          },
+          "configurations": {
+            "production": {
+              "index": "",
+              "optimization": true,
+              "outputHashing": "none",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "core"
