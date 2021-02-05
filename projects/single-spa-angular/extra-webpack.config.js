@@ -7,7 +7,7 @@ module.exports = (config, options) => {
   };
   custom.externals.push(
     /^@angular\/.*/,
-    'tslib',
+    // 'tslib',
   );
   return custom;
 };
