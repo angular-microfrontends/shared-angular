@@ -1,6 +1,9 @@
 {
   "root": true,
   "ignorePatterns": [
+    "coverage/",
+    "dist/",
+    "node_modules/",
     "projects/**/*"
   ],
   "overrides": [
