@@ -20,33 +20,6 @@ export class Attack {
     public defender: Fighter,
   ) { }
 
-  // move to attack component
-  get description(): string {
-    let desc = '';
-
-    if (!this.damageMargin) {
-      // no name
-    } else if (this.damageMargin > 10) {
-      desc += 'HARD';
-    } else if (this.damageMargin > 5) {
-      desc += 'Strong';
-    } else {
-      desc += 'Serious';
-    }
-
-    if (this.attackMargin > 10) {
-      desc += 'CRITICAL';
-    } else if (this.attackMargin > 5) {
-      desc += 'Skillful';
-    }
-
-    if (desc === '') {
-      desc = 'Regular';
-    }
-
-    return `${desc} Attack`;
-  }
-
   get attackModifier() {
     return -Math.floor(this.attackMargin / 2);
   }
