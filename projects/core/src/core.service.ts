@@ -31,6 +31,7 @@ export class CoreService {
       this.player.totalExperience,
     );
     this.challenger.heal();
+    this.player.heal();
   }
 
   startTurn(): void {
