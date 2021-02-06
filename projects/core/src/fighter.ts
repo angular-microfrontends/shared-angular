@@ -19,8 +19,6 @@ export class Fighter {
 
   strength = new Attribute(10);
 
-  unusedExperience;
-
   totalExperience = 0;
 
   get usedExperience(): number {
@@ -34,9 +32,10 @@ export class Fighter {
    */
   private attributes: Attribute[] = [];
 
-  constructor(exp: number = 0) {
-    this.unusedExperience = exp;
-
+  constructor(
+    public name: string,
+    public unusedExperience: number = 0,
+  ) {
     this.attributes.push(this.agility);
     this.attributes.push(this.constitution);
     this.attributes.push(this.dexterity);

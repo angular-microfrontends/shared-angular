@@ -10,8 +10,6 @@ import { Fighter } from '../fighter';
 export class StatsComponent {
   @Input() fighter!: Fighter;
 
-  @Input() name!: string;
-
   @Input() showCosts = false;
 
   @Input() showExperience = false;

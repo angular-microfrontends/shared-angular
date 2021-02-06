@@ -8,9 +8,11 @@ import { Fighter } from './fighter';
   providedIn: 'root',
 })
 export class CoreService {
+  challengeCount = 0;
+
   challenger?: Fighter;
 
-  player = new Fighter();
+  player = new Fighter('Player');
 
   attackData?: Attack;
 
@@ -23,7 +25,11 @@ export class CoreService {
   }
 
   startChallenge(): void {
-    this.challenger = new Fighter(this.player.totalExperience);
+    this.challengeCount += 1;
+    this.challenger = new Fighter(
+      `Challenger ${this.challengeCount}`,
+      this.player.totalExperience,
+    );
     this.challenger.heal();
     this.startTurn();
   }
