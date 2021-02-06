@@ -27,6 +27,7 @@ export class Attack {
   attack(): boolean {
     const atkMargin = this.attacker.dexterity.roll();
     if (!atkMargin) {
+      this.attackSuccessful = false;
       return false;
     }
     this.attackMargin = atkMargin;
