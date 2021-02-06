@@ -37,8 +37,7 @@ export class CoreService {
     this.nextReady();
     if (this.player === this.attackData?.attacker) {
       this.attacking = true;
-    } else {
-      this.challengerAttack();
+    } else if (this.challengerAttack()) {
       this.defending = true;
     }
   }
@@ -109,14 +108,14 @@ export class CoreService {
     this.player.learn(-1);
   }
 
-  private challengerAttack() {
+  private challengerAttack(): boolean {
     if (!this.challenger || !this.attackData) {
       throw new Error('Attacing without challenger or attackData');
     }
-    this.attackData.attack();
+    return this.attackData.attack();
   }
 
-  private challenderDefend() {
+  private challenderDefend(): void {
     if (!this.challenger || !this.attackData) {
       throw new Error('Defeding without challenger or attackData');
     }
