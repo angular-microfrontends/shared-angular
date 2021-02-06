@@ -17,7 +17,7 @@ export class Fighter {
 
   strength = new Attribute(10);
 
-  unusedExperience = 0;
+  unusedExperience;
 
   totalExperience = 0;
 
@@ -25,7 +25,52 @@ export class Fighter {
     return this.totalExperience - this.unusedExperience;
   }
 
+  /**
+   * Support for random level up.
+   */
+  private attributes: Attribute[] = [];
+
+  constructor(exp: number = 0) {
+    this.unusedExperience = exp;
+
+    this.attributes.push(this.agility);
+    this.attributes.push(this.constitution);
+    this.attributes.push(this.dexterity);
+    this.attributes.push(this.strength);
+
+    this.randomLevelUp();
+  }
+
+  private randomLevelUp(): void {
+    while (this.unusedExperience > 0) {
+      const attribute = this.randomAttribute();
+      this.totalExperience += attribute.cost;
+      this.unusedExperience -= Math.min(this.unusedExperience, attribute.cost);
+      attribute.increase();
+    }
+  }
+
+  private randomAttribute(): Attribute {
+    const candidates: Attribute[] = [];
+    this.attributes.forEach((attribute) => {
+      if (attribute.cost <= this.unusedExperience) {
+        candidates.push(attribute);
+      }
+    });
+    // last increase even if not enough experience
+    if (candidates.length === 0) {
+      candidates.push(...this.attributes);
+    }
+    return candidates[Math.floor(Math.random() * candidates.length)];
+  }
+
   heal() {
     this.health = this.maxHealth;
+  }
+
+  experience(amount: number) {
+    const newUnused = Math.max(this.unusedExperience + amount, 0);
+    this.totalExperience += newUnused - this.unusedExperience;
+    this.unusedExperience = newUnused;
   }
 }
