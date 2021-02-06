@@ -28,7 +28,7 @@ export class CoreService {
     this.startTurn();
   }
 
-  private startTurn(): void {
+  startTurn(): void {
     this.nextReady();
     if (this.player === this.attackData?.attacker) {
       this.attacking = true;
@@ -148,6 +148,8 @@ export class CoreService {
 
   private reset(): void {
     this.challenger = undefined;
+    this.attacking = false;
+    this.defending = false;
     this.player.heal();
   }
 }
