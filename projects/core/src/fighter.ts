@@ -1,6 +1,8 @@
 import { Attribute } from './attribute';
+import { Die } from './die';
 
 const HEALTH_MULTIPLIER = 10;
+const READINESS_COST = 100;
 
 export class Fighter {
   health = 0;
@@ -24,6 +26,8 @@ export class Fighter {
   get usedExperience(): number {
     return this.totalExperience - this.unusedExperience;
   }
+
+  readiness = 0;
 
   /**
    * Support for random level up.
@@ -61,16 +65,36 @@ export class Fighter {
     if (candidates.length === 0) {
       candidates.push(...this.attributes);
     }
-    return candidates[Math.floor(Math.random() * candidates.length)];
+    return candidates[Die.random(candidates.length)];
   }
 
-  heal() {
+  heal(): void {
     this.health = this.maxHealth;
   }
 
-  experience(amount: number) {
+  learn(amount: number): void {
     const newUnused = Math.max(this.unusedExperience + amount, 0);
     this.totalExperience += newUnused - this.unusedExperience;
     this.unusedExperience = newUnused;
+  }
+
+  getReady(): void {
+    this.readiness += this.agility.value;
+    const margin = this.agility.roll();
+    if (margin) {
+      this.readiness += this.agility.value + margin;
+    }
+  }
+
+  get ready(): boolean {
+    return this.readiness >= READINESS_COST;
+  }
+
+  useReadiness(): void {
+    this.readiness -= READINESS_COST;
+  }
+
+  takeDamage(damage: number) {
+    this.health -= Math.min(damage, this.health);
   }
 }
