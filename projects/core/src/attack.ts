@@ -3,7 +3,7 @@ import { Fighter } from './fighter';
 export class Attack {
   attackMargin = 0;
 
-  attackSuccessful = false;
+  attackSuccessful?: boolean;
 
   damage = 0;
 
