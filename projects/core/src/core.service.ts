@@ -25,13 +25,13 @@ export class CoreService {
   }
 
   startChallenge(): void {
+    this.reset();
     this.challengeCount += 1;
     this.challenger = new Fighter(
       `Challenger ${this.challengeCount}`,
       this.player.totalExperience,
     );
     this.challenger.heal();
-    this.player.heal();
   }
 
   startTurn(): void {
@@ -153,6 +153,7 @@ export class CoreService {
 
   private reset(): void {
     this.challenger = undefined;
+    this.attackData = undefined;
     this.attacking = false;
     this.defending = false;
     this.player.heal();
