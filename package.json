@@ -7,6 +7,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "build-all": "node ng-all.js build --prod",
     "postinstall": "ngcc"
   },
   "private": true,
