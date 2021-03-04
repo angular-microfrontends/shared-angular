@@ -1,4 +1,4 @@
-// <3 platforms!
+// <3 all platforms!
 const { readdir } = require('fs').promises;
 const { spawn  } = require('child_process');
 const ngBin = './node_modules/@angular/cli/bin/ng';
@@ -8,12 +8,8 @@ const ng = (project) => () => new Promise((resolve, reject) => {
 	console.log(`========== ${project} ==========`);
 	console.log(`ng ${action} ${project} ${params.join(' ')}`);
 	const proc = spawn('node', [ngBin, action, project, ...params]);
-	proc.stdout.on('data', data => {
-		console.log(`stdout: ${data}`);
-	});
-	proc.stderr.on('data', data => {
-		console.warn(`stderr: ${data}`);
-	});
+	proc.stdout.pipe(process.stdout, { end: false });
+	proc.stderr.pipe(process.stderr, { end: false });
 	proc.on('error', (error) => {
 		console.error(`error: ${error.message}`);
 	});
