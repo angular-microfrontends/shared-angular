@@ -16,8 +16,6 @@ import { StatsComponent } from './stats/stats.component';
   exports: [
     StatsComponent,
   ],
-  providers: [
-    CoreService,
-  ],
+  providers: [],
 })
 export class CoreModule { }
