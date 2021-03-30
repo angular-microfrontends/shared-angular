@@ -2,7 +2,9 @@
 
 <div class="health">
   <label>Health</label>
-  <div [style.background]="healthBar">{{ fighter.health }} / {{ fighter.maxHealth }}</div>
+  <div [style.background]="healthBar">
+    {{ fighter.health }} / {{ fighter.maxHealth }}
+  </div>
 </div>
 
 <core-attribute
@@ -28,5 +30,7 @@
 
 <div class="experience" *ngIf="showExperience">
   <label>Experience</label>
-  <div>{{ fighter.usedExperience }} / {{ fighter.totalExperience }}</div>
+  <div [style.background]="experienceBar">
+    {{ fighter.usedExperience }} / {{ fighter.totalExperience }}
+  </div>
 </div>

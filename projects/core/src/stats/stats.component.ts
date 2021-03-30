@@ -14,8 +14,16 @@ export class StatsComponent {
 
   @Input() showExperience = false;
 
-  get healthBar() {
-    const perc = Math.ceil((100 * this.fighter.health) / this.fighter.maxHealth);
+  get healthBar(): string {
+    return StatsComponent.barBackground(this.fighter.health, this.fighter.maxHealth);
+  }
+
+  get experienceBar(): string {
+    return StatsComponent.barBackground(this.fighter.usedExperience, this.fighter.totalExperience);
+  }
+
+  private static barBackground(value: number, max: number): string {
+    const perc = Math.ceil((100 * value) / max);
     let color;
     if (perc < 20) {
       color = 'red';
