@@ -122,4 +122,28 @@ export class Fighter {
   takeDamage(damage: number) {
     this.health -= Math.min(damage, this.health);
   }
+
+  private upgrade(attrib: Attribute): void {
+    if (this.unusedExperience < attrib.cost) {
+      return;
+    }
+    this.unusedExperience -= attrib.cost;
+    attrib.increase();
+  }
+
+  upgradeAgility() {
+    this.upgrade(this.agility);
+  }
+
+  upgradeConstitution() {
+    this.upgrade(this.constitution);
+  }
+
+  upgradeDexterity() {
+    this.upgrade(this.dexterity);
+  }
+
+  upgradeStrength() {
+    this.upgrade(this.strength);
+  }
 }
