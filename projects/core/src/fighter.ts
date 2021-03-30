@@ -36,12 +36,38 @@ export class Fighter {
     public name: string,
     public unusedExperience: number = 0,
   ) {
+    this.pushAttributes();
+    this.randomLevelUp();
+  }
+
+  serialize(): string {
+    return JSON.stringify({
+      agility: this.agility.value,
+      constitution: this.constitution.value,
+      dexterity: this.dexterity.value,
+      strength: this.strength.value,
+      totalExperience: this.totalExperience,
+      unusedExperience: this.unusedExperience,
+    });
+  }
+
+  deserialize(json: string) {
+    const values = JSON.parse(json);
+    this.agility = new Attribute(values.agility);
+    this.constitution = new Attribute(values.constitution);
+    this.dexterity = new Attribute(values.dexterity);
+    this.strength = new Attribute(values.strength);
+    this.totalExperience = values.totalExperience;
+    this.unusedExperience = values.unusedExperience;
+    this.pushAttributes();
+  }
+
+  private pushAttributes() {
+    this.attributes = [];
     this.attributes.push(this.agility);
     this.attributes.push(this.constitution);
     this.attributes.push(this.dexterity);
     this.attributes.push(this.strength);
-
-    this.randomLevelUp();
   }
 
   private randomLevelUp(): void {

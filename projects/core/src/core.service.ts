@@ -158,4 +158,15 @@ export class CoreService {
     this.defending = false;
     this.player.heal();
   }
+
+  save() {
+    localStorage.setItem('player', this.player.serialize());
+  }
+
+  load() {
+    const json = localStorage.getItem('player');
+    if (json) {
+      this.player.deserialize(json);
+    }
+  }
 }
