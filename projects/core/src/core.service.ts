@@ -160,6 +160,12 @@ export class CoreService {
   }
 
   save() {
+    /*
+     * This is just an example to make the component sharing demo work.
+     * Also to demonstrate the reuse of service code.
+     * For recommendations on sharing state/data, see
+     * https://single-spa.js.org/docs/faq/#how-can-i-share-application-state-between-applications
+     */
     localStorage.setItem('player', this.player.serialize());
   }
 
