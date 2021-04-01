@@ -1,3 +1,9 @@
+# ARCHIVED
+
+This project was setup to test Ivy sharing. It is no longer part of the solution and it
+**NOT RECOMMENDED**.
+
+
 # SharedAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
